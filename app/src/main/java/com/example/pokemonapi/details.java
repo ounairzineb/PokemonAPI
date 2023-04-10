@@ -28,9 +28,12 @@ public class details extends AppCompatActivity {
     private int id;
     private ImageView pokeImage;
     private TextView pokeName;
+    private TextView height;
+    private TextView weight;
     private Retrofit retrofit;
     private TextView type2;
     private TextView base;
+    private String nameType;
     private Pokemon pokemonDetail;
     private final List<Type> typesData = new ArrayList<>();
     private final List<StatsList> stateData = new ArrayList<>();
@@ -43,6 +46,9 @@ public class details extends AppCompatActivity {
         pokeName = (TextView) findViewById(R.id.PokeName);
         type2 = (TextView) findViewById(R.id.type);
         base = (TextView) findViewById(R.id.base);
+        height = (TextView) findViewById(R.id.height);
+        weight = (TextView) findViewById(R.id.weight);
+
         Intent intent = getIntent(); // get Intent which we set from Previous Activity4
         id = intent.getIntExtra("id",0);
         Glide.with(this)
@@ -70,8 +76,7 @@ public class details extends AppCompatActivity {
 
                     for (int i = 0; i < typesList.size(); i++) {
                         Type type = typesList.get(i);
-                        String nameType = type.getType().getName();
-                        typesData.add(new Type(nameType));
+                        nameType = type.getType().getName();
                         if(i==0){
                             type2.setText(nameType);
                         }
@@ -89,11 +94,14 @@ public class details extends AppCompatActivity {
                     }
 
                 pokemonDetail = new Pokemon(pokemon.getName(), pokemon.getBaseExperience(),  pokemon.getHeight(), pokemon.getWeight(),pokemon.getStats(), pokemon.getTypes());
-                    pokeName.setText(pokemonDetail.getName());
+                    pokeName.setText("Name:"+pokemonDetail.getName());
+                    height.setText("Height:"+pokemonDetail.getHeight());
                     //heightPoke.setText(heightFormatted);
                     //withPoke.setText(weightFormatted);
                     //progressViewExp.setProgress(pokemonInfo.getBaseExperience());
-                    base.setText(pokemon.getBaseExperience()+"/1000");
+                    base.setText("B-E:"+pokemon.getBaseExperience()+"/1000");
+                    weight.setText("Weight:"+pokemonDetail.getWeight());
+                    type2.setText("Type:"+nameType);
                     System.out.println("resultat : "+pokemonDetail.toString());
                 }else{
                     Log.e("Info", String.valueOf(response.code()));

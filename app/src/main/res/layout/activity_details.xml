@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@drawable/pokemon_grad">
 
     <ImageView
         android:id="@+id/pokeImage"
@@ -13,7 +14,7 @@
 
     <TextView
         android:id="@+id/PokeName"
-        android:layout_width="248dp"
+        android:layout_width="259dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardView"
         android:layout_marginStart="80dp"
@@ -27,7 +28,7 @@
 
     <TextView
         android:id="@+id/type"
-        android:layout_width="248dp"
+        android:layout_width="253dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardView"
         android:layout_marginStart="80dp"
@@ -41,7 +42,7 @@
 
     <TextView
         android:id="@+id/base"
-        android:layout_width="248dp"
+        android:layout_width="251dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardView"
         android:layout_marginStart="80dp"
@@ -55,7 +56,21 @@
 
     <TextView
         android:id="@+id/height"
-        android:layout_width="248dp"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardView"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="21dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textAppearance="@style/Platform.MaterialComponents.Light"
+        android:textColor="#738A93"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="255dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardView"
         android:layout_marginStart="80dp"
