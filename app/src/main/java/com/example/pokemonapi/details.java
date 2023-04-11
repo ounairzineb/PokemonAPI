@@ -24,7 +24,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class details extends AppCompatActivity {
+public class  details extends AppCompatActivity {
     private int id;
     private ImageView pokeImage;
     private TextView pokeName;
@@ -94,7 +94,7 @@ public class details extends AppCompatActivity {
                     }
 
                 pokemonDetail = new Pokemon(pokemon.getName(), pokemon.getBaseExperience(),  pokemon.getHeight(), pokemon.getWeight(),pokemon.getStats(), pokemon.getTypes());
-                    pokeName.setText("Name:"+pokemonDetail.getName());
+                    pokeName.setText(pokemonDetail.getName());
                     height.setText("Height:"+pokemonDetail.getHeight());
                     //heightPoke.setText(heightFormatted);
                     //withPoke.setText(weightFormatted);
@@ -102,6 +102,8 @@ public class details extends AppCompatActivity {
                     base.setText("B-E:"+pokemon.getBaseExperience()+"/1000");
                     weight.setText("Weight:"+pokemonDetail.getWeight());
                     type2.setText("Type:"+nameType);
+
+
                     System.out.println("resultat : "+pokemonDetail.toString());
                 }else{
                     Log.e("Info", String.valueOf(response.code()));
